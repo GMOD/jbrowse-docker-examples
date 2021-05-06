@@ -19,7 +19,7 @@ installed to make processing data easier.  Software includes:
 * GenomeTools for validating and sorting GFF
 * SAMTools (to get bgzip and tabix)
 * BioPerl
-* AWS CLI (for optionally placing resulting data in an S3 bucket)
+* AWS command line interface (CLI) (for optionally placing resulting data in an S3 bucket)
 * git
 
 The Dockerfile defining this base image is in the Alliance of Genome Resources GitHub repo for JBrowse containers (https://github.com/alliance-genome/agr_jbrowse_container) at https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile.processenv.
@@ -50,6 +50,9 @@ https://github.com/alliance-genome/agr_jbrowse_zfin/blob/main/Dockerfile.process
 
 WormBase JBrowse server
 https://github.com/WormBase/website-genome-browsers/blob/jbrowse-production/jbrowse/Dockerfile
+
+WormBase "protein schematic" JBrowse server
+https://github.com/WormBase/website-genome-browsers/blob/protein_schematic_production/protein_schematic/Dockerfile
 
 ZFIN JBrowse server
 https://github.com/alliance-genome/agr_jbrowse_zfin/blob/main/Dockerfile
