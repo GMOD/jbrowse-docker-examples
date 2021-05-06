@@ -57,3 +57,6 @@ https://github.com/scottcain/flybase-jbrowse
 
 Alliance of Genome Resources JBrowse server
 https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile
+
+SARS-CoV-2 browser (hosted at http://covid19.jbrowse.org)
+https://github.com/GMOD/sars-cov-2-jbrowse
