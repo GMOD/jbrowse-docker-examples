@@ -40,7 +40,17 @@ The Dockerfile defining this base image is also in the Alliance of Genome Resour
 Example Implementations
 =======================
 
-More details to come
+Outline:
+* Starting with "FROM gmod/jbrowse-gff-base:latest" write a simple Dockerfile:
+  * Pull in any configuration (minimun of a refSeq.json) from somewhere (github is easy but not required)
+  * Pull in a build script that does the actual work
+  * If you want the data to end up in AWS S3, pull in https://github.com/alliance-genome/agr_jbrowse_config.git, which provides a script called upload_to_S3.pl
+* Arguments for the controlling CMD script should be passed in as environment variables
+* The format of the controlling script can be quite simple:
+  * Process the env variables
+  * Use wget or curl to get the GFF file(s)
+  * Process (with potential preprocessing steps) with either flatfile-to-json.pl or bgzip/tabix
+  * Put the data somewhere (in these examples it's using upload_to_S3.pl and AWS S3)
 
 WormBase GFF processing
 https://github.com/WormBase/website-jbrowse-gff
