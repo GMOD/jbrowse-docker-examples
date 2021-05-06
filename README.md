@@ -24,6 +24,8 @@ installed to make processing data easier.  Software includes:
 
 The Dockerfile defining this base image is in the Alliance of Genome Resources GitHub repo for JBrowse containers (https://github.com/alliance-genome/agr_jbrowse_container) at https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile.processenv.
 
+As with everything on this page, I would be willing to include additional software to make processing easier, so pull requests are welcome.
+
 JBrowse server base image
 -------------------------
 
@@ -33,7 +35,7 @@ The JBrowse server base image at Docker Hub (https://hub.docker.com/r/gmod/jbrow
 * nodejs
 * git
 
-The Dockerfile defining this base image is also in the Alliance of Genome Resources GitHub repo for JBrowse containers (https://github.com/alliance-genome/agr_jbrowse_container) at https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile.buildenv.
+The Dockerfile defining this base image is also in the Alliance of Genome Resources GitHub repo for JBrowse containers (https://github.com/alliance-genome/agr_jbrowse_container) at https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile.buildenv. Again, PRs welcome!
 
 Example Implementations
 =======================
