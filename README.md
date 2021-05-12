@@ -60,9 +60,11 @@ https://github.com/alliance-genome/agr_jbrowse_zfin/blob/main/Dockerfile.process
 
 WormBase JBrowse server
 https://github.com/WormBase/website-genome-browsers/blob/jbrowse-production/jbrowse/Dockerfile
+* plus a working implementation at Docker Hub: https://hub.docker.com/r/gmod/wormbase-jbrowse
 
-WormBase "protein schematic" JBrowse server
+WormBase "protein schematic" JBrowse server (uses amino acid coordinates)
 https://github.com/WormBase/website-genome-browsers/blob/protein_schematic_production/protein_schematic/Dockerfile
+* plus a working implementation at Docker Hub: https://hub.docker.com/r/gmod/wormbase-jbrowse-protein
 
 ZFIN JBrowse server
 https://github.com/alliance-genome/agr_jbrowse_zfin/blob/main/Dockerfile
@@ -75,3 +77,4 @@ https://github.com/alliance-genome/agr_jbrowse_container/blob/master/Dockerfile
 
 SARS-CoV-2 browser (hosted at http://covid19.jbrowse.org)
 https://github.com/GMOD/sars-cov-2-jbrowse
+* plus a working implementation at Docker Hub: https://hub.docker.com/r/gmod/sars-cov-2-jbrowse
