@@ -41,7 +41,7 @@ Example Implementations
 =======================
 
 Outline:
-* Starting with "FROM gmod/jbrowse-gff-base:latest" write a simple Dockerfile:
+* Starting with `FROM gmod/jbrowse-gff-base:latest` write a simple Dockerfile:
   * Pull in any configuration (minimun of a refSeq.json) from somewhere (github is easy but not required)
   * Pull in a build script that does the actual work
   * If you want the data to end up in AWS S3, pull in https://github.com/alliance-genome/agr_jbrowse_config.git, which provides a script called upload_to_S3.pl
@@ -58,6 +58,25 @@ Of course the AWS keys would be replaced with the real thing. Make sure to never
   * Use wget or curl to get the GFF file(s)
   * Process (with potential preprocessing steps) with either flatfile-to-json.pl or bgzip/tabix
   * Put the data somewhere (in these examples it's using upload_to_S3.pl and AWS S3)
+
+Building the server container is moderately more complicated but not too bad.  
+
+* Start with`FROM gmod/jbrowse-buildenv:latest as build` and write a simple Docker file:
+  * Pull in needed code, including:
+    * The JBrowse source
+    * Configuration files
+    * Any plugins that are needed
+  * Move files around to put them where they need to (plugins to the plugin directory, config files in the data directory, etc)
+  * Run `setup.sh -f` (the `-f` gives a faster build, as it skips Perl prereqs and examples)
+  * Start a new container like `FROM nginx:latest as production`
+  * Copy the JBrowse files and directories into the new container, like this:
+```
+COPY --from=build /usr/share/nginx/html/jbrowse/dist /usr/share/nginx/html/jbrowse/dist
+```
+The separate "FROM" lines result in a server container that is very small, since it only has nginx and the JBrowse JavaScript and configuration files to run the website and the data reside elsewhere.
+
+Examples
+========
 
 WormBase GFF processing
 https://github.com/WormBase/website-jbrowse-gff
