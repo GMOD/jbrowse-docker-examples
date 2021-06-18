@@ -45,7 +45,14 @@ Outline:
   * Pull in any configuration (minimun of a refSeq.json) from somewhere (github is easy but not required)
   * Pull in a build script that does the actual work
   * If you want the data to end up in AWS S3, pull in https://github.com/alliance-genome/agr_jbrowse_config.git, which provides a script called upload_to_S3.pl
-* Arguments for the controlling CMD script should be passed in as environment variables
+* Arguments for the controlling CMD script should be passed in as environment variables.  For example, typical build and run commands would look like this:
+
+```
+docker build --no-cache -f Dockerfile.processgff -t processgff .
+docker run --rm -e "AWS_ACCESS_KEY=<AWSACCESS>" -e "AWS_SECRET_KEY=<AWSSECRET>" processgff
+```
+Of course the AWS keys would be replaced with the real thing. Make sure to never commit your AWS keys to GitHub!
+
 * The format of the controlling script can be quite simple:
   * Process the env variables
   * Use wget or curl to get the GFF file(s)
